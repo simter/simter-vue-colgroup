@@ -8,9 +8,19 @@ window.onload = function () {
     data: {
       columns1: ["50px", "100px", "150px"],
       columns2: [
-        { label: "Column1", width: "50px" },
-        { label: "Column2", width: "100px" },
-        { label: "Column3", width: "150px" }
+        { width: "50px" },
+        { width: "100px" },
+        { width: "150px" }
+      ],
+      columns3: [
+        "50px",
+        { width: "100px" },
+        {
+          children: [
+            { width: "150px" },
+            "50px"
+          ]
+        }
       ]
     }
   })

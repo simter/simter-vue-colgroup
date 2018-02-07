@@ -10,7 +10,7 @@
 
 <body>
   <div id="demo">
-    <h2>Config String Array :</h2>
+    <h2>String Array :</h2>
     <code>columns: ["50px", "100px", "150px"]</code>
     <table border="1" style="border-collapse:collapse">
       <colgroup is="st-colgroup" :columns="columns1"></colgroup>
@@ -21,17 +21,37 @@
       </thead>
     </table>
 
-    <h2>Config Object Array :</h2>
+    <h2>{width: xxx} Array :</h2>
     <pre>columns: [
-  { label: "Column1", width: "50px"  },
-  { label: "Column2", width: "100px" },
-  { label: "Column3", width: "150px" }
+  { width: "50px"  },
+  { width: "100px" },
+  { width: "150px" }
 ]</pre>
     <table border="1" style="border-collapse:collapse">
       <colgroup is="st-colgroup" :columns="columns2"></colgroup>
       <thead>
         <tr>
-          <th v-for="(c, index) in columns2">{{c.label}}</th>
+          <th v-for="(c, index) in columns2">{{index}}</th>
+        </tr>
+      </thead>
+    </table>
+
+    <h2>Nested Array :</h2>
+    <pre>columns: [
+  "50px",
+  { width: "100px" },
+  {
+    children: [
+      { width: "150px" },
+      "50px"
+    ]
+  }
+]</pre>
+    <table border="1" style="border-collapse:collapse">
+      <colgroup is="st-colgroup" :columns="columns3"></colgroup>
+      <thead>
+        <tr>
+          <th v-for="(c, index) in [1,2,3,4]">{{index}}</th>
         </tr>
       </thead>
     </table>
