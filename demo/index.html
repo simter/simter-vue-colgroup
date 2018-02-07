@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <title>st-colgroup Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="demo">
+    <h2>Config String Array :</h2>
+    <code>columns: ["50px", "100px", "150px"]</code>
+    <table border="1" style="border-collapse:collapse">
+      <colgroup is="st-colgroup" :columns="columns1"></colgroup>
+      <thead>
+        <tr>
+          <th v-for="(c, index) in columns1">{{index}}</th>
+        </tr>
+      </thead>
+    </table>
+
+    <h2>Config Object Array :</h2>
+    <pre>columns: [
+  { label: "Column1", width: "50px"  },
+  { label: "Column2", width: "100px" },
+  { label: "Column3", width: "150px" }
+]</pre>
+    <table border="1" style="border-collapse:collapse">
+      <colgroup is="st-colgroup" :columns="columns2"></colgroup>
+      <thead>
+        <tr>
+          <th v-for="(c, index) in columns2">{{c.label}}</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
