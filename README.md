@@ -35,6 +35,8 @@ new Vue({
 })
 ```
 
+See details from [demo/index.html](demo/index.html).
+
 [rollup]: https://rollupjs.org
 [parcel]: https://parceljs.org
 [yarn]: https://yarnpkg.com

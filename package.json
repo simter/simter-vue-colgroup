@@ -9,7 +9,8 @@
   "license": "MIT",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "demo"
   ],
   "scripts": {
     "dev": "parcel demo/index.html -d temp",
