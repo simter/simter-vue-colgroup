@@ -12,29 +12,36 @@
   <div id="demo">
     <h2>String Array :</h2>
     <code>columns: ["50px", "100px", "150px"]</code>
-    <table border="1" style="border-collapse:collapse">
+    <table border="1" style="border-collapse:collapse;table-layout:fixed;width:100%;max-width:200px">
       <colgroup is="st-colgroup" :columns="columns1"></colgroup>
       <thead>
         <tr>
-          <th v-for="(c, index) in columns1">{{index}}</th>
+          <th v-for="(c, index) in columns1" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">Column{{index}}</th>
         </tr>
       </thead>
     </table>
+    <p>Attention: To make td has ellipsis text, need to set `table-layout:fixed` 
+      and a suitable width on the table element, as well as 
+      `overflow:hidden;white-space:nowrap;text-overflow:ellipsis` on the table cells.
+    </p>
 
     <h2>{width: xxx} Array :</h2>
     <pre>columns: [
   { width: "50px"  },
   { width: "100px" },
   { width: "150px" }
-]</pre>
+]
+Will be simplify to ["50px", "100px", "150px"]</pre>
     <table border="1" style="border-collapse:collapse">
       <colgroup is="st-colgroup" :columns="columns2"></colgroup>
       <thead>
         <tr>
-          <th v-for="(c, index) in columns2">{{index}}</th>
+          <th v-for="(c, index) in columns2" style="word-break:break-all">Column{{index}}</th>
         </tr>
       </thead>
     </table>
+    <p>Attention: To make td has auto return text, just set `word-break:break-all` on the table cells.
+    </p>
 
     <h2>Nested Array :</h2>
     <pre>columns: [
@@ -46,7 +53,8 @@
       "50px"
     ]
   }
-]</pre>
+]
+Will be flatten to ["50px", "100px", "150px", "50px"]</pre>
     <table border="1" style="border-collapse:collapse">
       <colgroup is="st-colgroup" :columns="columns3"></colgroup>
       <thead>
