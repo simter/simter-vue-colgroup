@@ -1,4 +1,4 @@
-Simter `colgroup` component.
+Simter `colgroup` component. See [docs](https://simter.github.io/simter-vue-colgroup).
 
 # Initial
 
