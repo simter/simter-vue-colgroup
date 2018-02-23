@@ -35,7 +35,7 @@ new Vue({
 })
 ```
 
-See details from [demo/index.html](demo/index.html).
+[See document](https://simter.github.io/simter-vue-colgroup).
 
 [rollup]: https://rollupjs.org
 [parcel]: https://parceljs.org
