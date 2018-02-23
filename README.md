@@ -31,11 +31,12 @@ import colgroup from 'simter-vue-colgroup'
 
 Vue.component('st-colgroup', colgroup)
 new Vue({
-  el: "#demo"
+  el: "#demo",
+  ...
 })
 ```
 
-See details from [demo/index.html](demo/index.html).
+[See document](https://simter.github.io/simter-vue-colgroup).
 
 [rollup]: https://rollupjs.org
 [parcel]: https://parceljs.org

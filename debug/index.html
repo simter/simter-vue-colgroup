@@ -6,13 +6,20 @@
   <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
   <title>st-colgroup debug</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <style>
+    body {background-color: #000; color: #888}
+    hr {border-color: #888}
+    a {color: #888}
+  </style>
 </head>
 
 <body>
+  <h1>simter-vue-colgroup</h1>
+  <hr>
   <div id="demo">
     <h2>String Array :</h2>
     <code>columns: ["50px", "100px", "150px"]</code>
-    <table border="1" style="border-collapse:collapse;table-layout:fixed;width:100%;max-width:200px">
+    <table border="1" style="table-layout:fixed;width:100%;max-width:200px">
       <colgroup is="st-colgroup" :columns="columns1"></colgroup>
       <thead>
         <tr>
@@ -32,7 +39,7 @@
   { width: "150px" }
 ]
 Will be simplify to ["50px", "100px", "150px"]</pre>
-    <table border="1" style="border-collapse:collapse">
+    <table border="1">
       <colgroup is="st-colgroup" :columns="columns2"></colgroup>
       <thead>
         <tr>
@@ -55,7 +62,7 @@ Will be simplify to ["50px", "100px", "150px"]</pre>
   }
 ]
 Will be flatten to ["50px", "100px", "150px", "50px"]</pre>
-    <table border="1" style="border-collapse:collapse">
+    <table border="1">
       <colgroup is="st-colgroup" :columns="columns3"></colgroup>
       <thead>
         <tr>
