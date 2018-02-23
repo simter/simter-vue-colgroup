@@ -10,7 +10,10 @@
   "files": [
     "src",
     "dist",
-    "demo"
+    "debug",
+    "docs",
+    "rollup.config.js",
+    ".babelrc"
   ],
   "scripts": {
     "dev": "parcel debug/index.html -d temp",
