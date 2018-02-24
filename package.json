@@ -1,6 +1,6 @@
 {
   "name": "simter-vue-colgroup",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Simter colgroup component",
   "main": "dist/simter-vue-colgroup.js",
   "module": "dist/simter-vue-colgroup.esm.js",
