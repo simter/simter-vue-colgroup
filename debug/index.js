@@ -1,27 +1,13 @@
-import hello from '../src/colgroup.vue'
+import Vue from 'vue'
+import example1 from './example1.vue'
+import example2 from './example2.vue'
 
-window.onload = function () {
-  Vue.component('st-colgroup', hello)
+new Vue({
+  el: "#sample1",
+  render: h => h(example1)
+})
 
-  new Vue({
-    el: "#demo",
-    data: {
-      columns1: ["50px", "100px", "150px"],
-      columns2: [
-        { width: "50px" },
-        { width: "100px" },
-        { width: "150px" }
-      ],
-      columns3: [
-        "50px",
-        { width: "100px" },
-        {
-          children: [
-            { width: "150px" },
-            "50px"
-          ]
-        }
-      ]
-    }
-  })
-}
+new Vue({
+  el: "#sample2",
+  render: h => h(example2)
+})
