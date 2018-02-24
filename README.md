@@ -1,22 +1,17 @@
-Simter `colgroup` component. See [docs](https://simter.github.io/simter-vue-colgroup).
+# simter-vue-colgroup component
 
-# Initial
+Define table's columns width by a string array. Such as `columns = ["100px", "10em", "200px"]`.
 
-```
-yarn install
-```
-
-Go to [yarn].
-
-# Develop
+## Develop
 
 ```
+yarn install  // or npm install
 npm run dev
 ```
 
-Use [parcel] run the demo.
+Use [parcel] to run the development debug.
 
-# Build
+## Build
 
 ```
 npm run build
@@ -24,19 +19,100 @@ npm run build
 
 Use [rollup] package the component to `dist` directory.
 
-# Usage
+## Usage
 
-```
+### Example 1 : Base Config (config column width by string array)
+
+Js:
+
+```js
 import colgroup from 'simter-vue-colgroup'
 
-Vue.component('st-colgroup', colgroup)
 new Vue({
-  el: "#demo",
-  ...
+  el: "#sample",
+  data: {
+    columns: ["100px", "10em", "200px"]
+  },
+  components: {
+    "st-colgroup": colgroup
+  }
 })
 ```
 
-[See document](https://simter.github.io/simter-vue-colgroup).
+Html template:
+
+```html
+<table id="#sample">
+  <colgroup is="st-colgroup" :columns="columns"></colgroup>
+  ...
+</table>
+```
+
+Generated html:
+
+```html
+<table>
+  <colgroup>
+    <colg style="width: 100px">
+    <colg style="width: 10em">
+    <colg style="width: 200px">
+  </colgroup>
+  ...
+</table>
+```
+
+### Example 2 : Flatten Complex Config
+
+Js:
+
+```js
+import colgroup from 'simter-vue-colgroup'
+
+new Vue({
+  el: "#sample",
+  data: {
+    // flatten to ["81px", "82px", "83px", "84px"].
+    // children can nested multiple level.
+    // only deal with object's 'width' and 'children' key.
+    columns: colgroup.flatten([
+      "81px",
+      { width: "82px" },
+      {
+        children: [
+          { width: "83px" },
+          "84px"
+        ]
+      }
+    ])
+  },
+  components: {
+    "st-colgroup": colgroup
+  }
+})
+```
+
+Html template:
+
+```html
+<table id="#sample">
+  <colgroup is="st-colgroup" :columns="columns"></colgroup>
+  ...
+</table>
+```
+
+Generated html:
+
+```html
+<table>
+  <colgroup>
+    <colg style="width: 81px">
+    <colg style="width: 82px">
+    <colg style="width: 83px">
+    <colg style="width: 84px">
+  </colgroup>
+  ...
+</table>
+```
 
 [rollup]: https://rollupjs.org
 [parcel]: https://parceljs.org
