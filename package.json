@@ -2,6 +2,12 @@
   "name": "simter-vue-colgroup",
   "version": "0.2.0",
   "description": "Simter colgroup component",
+  "keywords": [
+    "simter",
+    "vue",
+    "rollup",
+    "parcel"
+  ],
   "main": "dist/simter-vue-colgroup.js",
   "module": "dist/simter-vue-colgroup.esm.js",
   "repository": "https://github.com/simter/simter-vue-colgroup.git",
