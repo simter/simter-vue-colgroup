@@ -1,5 +1,3 @@
 {
-  "presets": [
-    [ "env", { "targets": {} } ]
-  ]
-}
+  "presets": ["env"]
+} 
