@@ -1,6 +1,7 @@
 # simter-vue-colgroup component
 
-Define table's columns width by a string array. Such as `columns = ["100px", "10em", "200px"]`.
+Define table's colgroup tag by structured data. Such as `columns = ["10px", "10em", "20px"]` or 
+`columns = ["10px", {children: ["10em", "20px"]}]`.
 
 ## Develop
 
@@ -71,10 +72,10 @@ import colgroup from 'simter-vue-colgroup'
 new Vue({
   el: "#sample",
   data: {
-    // flatten to ["81px", "82px", "83px", "84px"].
+    // auto flatten to ["81px", "82px", "83px", "84px"].
     // children can nested multiple level.
     // only deal with object's 'width' and 'children' key.
-    columns: colgroup.flatten([
+    columns: [
       "81px",
       { width: "82px" },
       {
@@ -83,7 +84,7 @@ new Vue({
           "84px"
         ]
       }
-    ])
+    ]
   },
   components: {
     "st-colgroup": colgroup
