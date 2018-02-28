@@ -1,3 +1,8 @@
+/*!
+* simter-vue-colgroup v0.2.3
+* @author RJ.Hwang <rongjihuang@gmail.com>
+* @license MIT
+*/
 /**
  * Flatten complex object array to simple string array.
  * 
