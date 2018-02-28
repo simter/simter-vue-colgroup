@@ -1,53 +1,54 @@
 <template>
-<div>
-  <h2>Example 2 : Complex Config (use 'flatten' helper function)</h2>
+<div class="block example">
+  <h2>Example 2 : Nested by children</h2>
+  <table class="template" id="sample2" border="1">
+    <colgroup is="st-colgroup" :columns="columns"></colgroup>
+    <thead>
+      <tr>
+        <th>50px</th>
+        <th>80px</th>
+        <th>100px</th>
+        <th>60px</th>
+      </tr>
+    </thead>
+  </table>
   <pre v-pre>
-// Js:
-import colgroup from '../src/colgroup.vue'
-
-new Vue({
-  el: "#sample",
-  data: {
-    // flatten to ["81px", "82px", "83px", "84px"]
-    // children can nested multiple level
-    columns: <b>colgroup.flatten</b>([
-      "81px",
-      { width: "82px" },
-      {
-        children: [
-          { width: "83px" },
-          "84px"
-        ]
-      }
-    ])
-  },
-  components: {
-    "st-colgroup": colgroup
-  }
-})
+// Expected result:
+| 50px | 80px | 100px | 60px |
 
 // Html:
 &lt;table id="#sample"&gt;
   &lt;colgroup <b>is="st-colgroup"</b> :columns="columns"&gt;&lt;/colgroup&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th v-for="width in columns"&gt;{{width}}&lt;/th&gt;
+      &lt;th&gt;50px&lt;/th&gt;
+      &lt;th&gt;80px&lt;/th&gt;
+      &lt;th&gt;100px&lt;/th&gt;
+      &lt;th&gt;60px&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
 &lt;/table&gt;
 
-// Expected result:
-| 81px | 82px | 83px | 84px |
+// Js:
+import colgroup from '../src/colgroup.vue'
 
-// Actual result:</pre>
-  <table id="sample2" border="1">
-    <colgroup is="st-colgroup" :columns="columns"></colgroup>
-    <thead>
-      <tr>
-        <th v-for="(width, index) in columns" :key="index">{{width}}</th>
-      </tr>
-    </thead>
-  </table>
+new Vue({
+  el: "#sample",
+  data: {
+    // auto flatten to ["50px", "80px", "100px", "60px"]
+    // children can nested multiple level
+    columns: [
+      "50px",
+      { width: "80px" },
+      {
+        children: [{ width: "100px" }, "60px"]
+      }
+    ]
+  },
+  components: {
+    "st-colgroup": colgroup
+  }
+})</pre>
 </div>
 </template>
 
@@ -56,13 +57,13 @@ import colgroup from "../src/colgroup.vue";
 export default {
   data() {
     return {
-      columns: colgroup.flatten([
-        "81px",
-        { width: "82px" },
+      columns: [
+        "50px",
+        { width: "80px" },
         {
-          children: [{ width: "83px" }, "84px"]
+          children: [{ width: "100px" }, "60px"]
         }
-      ])
+      ]
     };
   },
   components: {
