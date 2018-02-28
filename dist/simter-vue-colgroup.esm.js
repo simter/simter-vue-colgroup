@@ -1,5 +1,5 @@
 /*!
-* simter-vue-colgroup v0.2.4
+* simter-vue-colgroup v0.2.5
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
