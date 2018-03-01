@@ -11,7 +11,7 @@
   </table>
   <pre v-pre>
 // Expected result:
-| 100px | 10em | 200px |
+| 60px | 4em | 61px |
 
 // Html:
 &lt;table id="#sample"&gt;
@@ -29,7 +29,7 @@ import colgroup from '../src/colgroup.vue'
 new Vue({
   el: "#sample",
   data: {
-    columns: ["100px", "10em", "200px"]
+    columns: ["60px", "4em", "61px"]
   },
   components: {
     "st-colgroup": colgroup
@@ -43,7 +43,7 @@ import colgroup from "../src/colgroup.vue";
 export default {
   data() {
     return {
-      columns: ["100px", "10em", "200px"]
+      columns: ["60px", "4em", "61px"]
     };
   },
   components: {

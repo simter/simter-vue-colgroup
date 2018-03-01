@@ -1,4 +1,4 @@
-# simter-vue-colgroup component
+# Vue Component simter-vue-colgroup
 
 Define table's colgroup tag by structured data. Such as `columns = ["10px", "10em", "20px"]` or 
 `columns = ["10px", {children: ["10em", "20px"]}]`.

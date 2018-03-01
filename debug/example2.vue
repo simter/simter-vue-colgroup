@@ -5,26 +5,26 @@
     <colgroup is="st-colgroup" :columns="columns"></colgroup>
     <thead>
       <tr>
-        <th>50px</th>
-        <th>80px</th>
-        <th>100px</th>
         <th>60px</th>
+        <th>4em</th>
+        <th>61px</th>
+        <th>62px</th>
       </tr>
     </thead>
   </table>
   <pre v-pre>
 // Expected result:
-| 50px | 80px | 100px | 60px |
+| 60px | 4em | 61px | 62px |
 
 // Html:
 &lt;table id="#sample"&gt;
   &lt;colgroup <b>is="st-colgroup"</b> :columns="columns"&gt;&lt;/colgroup&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;50px&lt;/th&gt;
-      &lt;th&gt;80px&lt;/th&gt;
-      &lt;th&gt;100px&lt;/th&gt;
       &lt;th&gt;60px&lt;/th&gt;
+      &lt;th&gt;4em&lt;/th&gt;
+      &lt;th&gt;61px&lt;/th&gt;
+      &lt;th&gt;62px&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
 &lt;/table&gt;
@@ -35,13 +35,13 @@ import colgroup from '../src/colgroup.vue'
 new Vue({
   el: "#sample",
   data: {
-    // auto flatten to ["50px", "80px", "100px", "60px"]
+    // auto flatten to ["60px", "4em", "61px", "62px"]
     // children can nested multiple level
     columns: [
-      "50px",
-      { width: "80px" },
+      "60px",
+      { width: "4em" },
       {
-        children: [{ width: "100px" }, "60px"]
+        children: [{ width: "61px" }, "62px"]
       }
     ]
   },
@@ -58,10 +58,10 @@ export default {
   data() {
     return {
       columns: [
-        "50px",
-        { width: "80px" },
+        "60px",
+        { width: "4em" },
         {
-          children: [{ width: "100px" }, "60px"]
+          children: [{ width: "61px" }, "62px"]
         }
       ]
     };
