@@ -1,5 +1,5 @@
 /*!
-* simter-vue-colgroup v0.2.5
+* simter-vue-colgroup v0.2.6
 * @author RJ.Hwang <rongjihuang@gmail.com>
 * @license MIT
 */
@@ -36,13 +36,13 @@ const component = {render: function(){var _vm=this;var _h=_vm.$createElement;var
  * 3. [{width: '20px'}, {children: [{width: '40px'}, {width: '60px'}]}, ...]
  *    flatten to ['20px', '40px', '60px', ...]
  */
-function flatten(columns) {
-  return columns
-    .reduce((a, b) => {
-      return a.concat(b.children ? flatten(b.children) : b.width || b);
-    }, [])
-    .map(a => a.width || a);
-}
+const flatten = columns =>
+  columns
+    .reduce(
+      (a, b) => a.concat(b.children ? flatten(b.children) : b.width || b),
+      []
+    )
+    .map(a => (typeof a === "object" ? a.width : a));
 
 exports.flatten = flatten;
 exports.default = component;
